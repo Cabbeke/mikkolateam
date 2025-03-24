@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function Navbar() {
@@ -67,36 +67,44 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden focus-visible:focus"
-          onClick={toggleMenu}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isMenuOpen}
-        >
-          {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
-        </Button>
+        <div className="flex items-center gap-2 md:hidden">
+          <Link
+            href="/kalender"
+            className="mr-2 flex items-center bg-black/40 border border-mcpink-500 text-white px-3 py-1.5 rounded-lg shadow-[0_0_10px_rgba(236,72,153,0.5)] hover:shadow-[0_0_15px_rgba(236,72,153,0.7)] transition-all duration-300"
+          >
+            <Calendar className="h-4 w-4 mr-1 text-mcpink-400" />
+            <span className="text-xs font-medium">Kalender</span>
+          </Link>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden focus-visible:focus"
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+          >
+            {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
+          </Button>
+        </div>
 
         {/* Desktop navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link href={getNavLink("over-ons")} className="nav-link focus-visible:focus" onClick={handleNavClick}>
-            Over Ons
-          </Link>
           <Link href="/piloten" className="nav-link focus-visible:focus" onClick={handleNavClick}>
-            Onze Piloten
+            Piloten
           </Link>
           <Link href="/sponsors" className="nav-link focus-visible:focus" onClick={handleNavClick}>
-            Onze Sponsors
-          </Link>
-          <Link href="/kalender" className="nav-link focus-visible:focus" onClick={handleNavClick}>
-            Kalender 2025
-          </Link>
-          <Link href={getNavLink("contact")} className="nav-link focus-visible:focus" onClick={handleNavClick}>
-            Contact
+            Sponsors
           </Link>
           <Link href="/bestuur" className="nav-link focus-visible:focus">
             Bestuur
+          </Link>
+          <Link
+            href="/kalender"
+            className="flex items-center bg-black/40 border border-mcpink-900 text-white px-4 py-2 rounded-lg shadow-[0_0_10px_rgba(236,72,153,0.5)] hover:shadow-[0_0_15px_rgba(236,72,153,0.7)] transition-all duration-300 hover:bg-black/60"
+          >
+            <Calendar className="h-5 w-5 mr-2 text-mcpink-400" />
+            <span className="font-medium">Kalender 2025</span>
           </Link>
         </nav>
 
@@ -108,20 +116,12 @@ export default function Navbar() {
           >
             <nav className="container flex flex-col py-8">
               <Link
-                href={getNavLink("over-ons")}
-                className="py-4 text-xl font-medium text-white hover:text-mcpink-500 border-b border-gray-800 focus-visible:focus animate-fadeIn"
-                onClick={handleNavClick}
-                style={{ animationDelay: "0.1s" }}
-              >
-                Over Ons
-              </Link>
-              <Link
                 href="/piloten"
                 className="py-4 text-xl font-medium text-white hover:text-mcpink-500 border-b border-gray-800 focus-visible:focus animate-fadeIn"
                 onClick={handleNavClick}
                 style={{ animationDelay: "0.2s" }}
               >
-                Onze Piloten
+                Piloten
               </Link>
               <Link
                 href="/sponsors"
@@ -129,7 +129,7 @@ export default function Navbar() {
                 onClick={handleNavClick}
                 style={{ animationDelay: "0.3s" }}
               >
-                Onze Sponsors
+                Sponsors
               </Link>
               <Link
                 href="/kalender"
@@ -137,15 +137,7 @@ export default function Navbar() {
                 onClick={handleNavClick}
                 style={{ animationDelay: "0.4s" }}
               >
-                Kalender 2025
-              </Link>
-              <Link
-                href={getNavLink("contact")}
-                className="py-4 text-xl font-medium text-white hover:text-mcpink-500 border-b border-gray-800 focus-visible:focus animate-fadeIn"
-                onClick={handleNavClick}
-                style={{ animationDelay: "0.5s" }}
-              >
-                Contact
+                Kalender
               </Link>
               <Link
                 href="/bestuur"

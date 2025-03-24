@@ -17,7 +17,7 @@ export default function SponsorsPage() {
     {
       id: 2,
       name: "Bouwwerken Jurgen Delbeke",
-      logo: "/placeholder.svg?height=200&width=200",
+      logo: "/sponsors/bouwwerken jurgen delbeke.png",
       address: "Rollegem",
       website: "https://www.bouwwerken-delbeke.be/",
       phone: "0495 93 98 23",
@@ -25,15 +25,14 @@ export default function SponsorsPage() {
     {
       id: 3,
       name: "C-worx",
-      logo: "/placeholder.svg?height=200&width=200",
       address: "Wevelgem",
       website: "",
-      phone: "",
+      phone: "0475 96 60 80",
     },
     {
       id: 4,
       name: "Denicol",
-      logo: "/placeholder.svg?height=200&width=200",
+      logo: "/sponsors/denicol.png",
       address: "Ranst",
       website: "https://www.denicol.com/",
       phone: "+32 3 485 81 91",
@@ -41,7 +40,6 @@ export default function SponsorsPage() {
     {
       id: 5,
       name: "DM Consult",
-      logo: "/placeholder.svg?height=200&width=200",
       address: "",
       website: "",
       phone: "",
@@ -49,7 +47,7 @@ export default function SponsorsPage() {
     {
       id: 6,
       name: "EKS-brillen",
-      logo: "/placeholder.svg?height=200&width=200",
+      logo: "/sponsors/eks-brillen.avif",
       address: "Genk",
       website: "https://eksbrand.com",
       phone: "",
@@ -57,7 +55,6 @@ export default function SponsorsPage() {
     {
       id: 7,
       name: "Elektriciteit Van Den Broeke",
-      logo: "/placeholder.svg?height=200&width=200",
       address: "Kruishoutem",
       website: "",
       phone: "",
@@ -65,23 +62,22 @@ export default function SponsorsPage() {
     {
       id: 8,
       name: "Fidufac",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "Cyriel Verschaevestraat 100, 8510 Marke",
-      website: "",
+      logo: "/sponsors/fidufac.png",
+      address: "Marke",
+      website: "https://www.fidufac.be/",
       phone: "056 25 88 76",
     },
     {
       id: 9,
       name: "Gemeente Deerlijk",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "",
-      website: "",
-      phone: "",
+      logo: "/sponsors/gemeente deerlijk.avif",
+      address: "Deerlijk",
+      website: "https://www.deerlijk.be/",
+      phone: "056 69 47 20",
     },
     {
       id: 10,
       name: "HDC Products",
-      logo: "/placeholder.svg?height=200&width=200",
       address: "Kluisbergen",
       website: "",
       phone: "",
@@ -89,55 +85,55 @@ export default function SponsorsPage() {
     {
       id: 11,
       name: "Homet BVBA",
-      logo: "/placeholder.svg?height=200&width=200",
+      logo: "/sponsors/homet.png",
       address: "Izegem",
       website: "https://www.homet.be",
-      phone: "",
+      phone: "0478/90.38.56",
     },
     {
       id: 12,
       name: "Luc Wybon BVBA",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "Arenastraat 6, 8510 Marke",
-      website: "",
-      phone: "0475 20 11 37",
+      logo: "/sponsors/wybon.gif",
+      address: "Marke",
+      website: "https://www.wybon.be/",
+      phone: "+32 (0)479 55 05 41",
     },
     {
       id: 13,
       name: "Monster Energy Drink",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "",
-      website: "",
-      phone: "",
+      logo: "/sponsors/monster.webp",
+      address: "Verenigde Staten",
+      website: "https://www.monsterenergy.com/",
+      phone: "1-866-322-4466",
     },
     {
       id: 14,
       name: "Motor 2000 KTM",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "Schouwersweg 28, 4451 HT Heinkenszand",
+      logo: "/sponsors/motor2000ktm.png",
+      address: "Heinkenszand",
       website: "https://www.motor2000.nl",
       phone: "+31 113 567200",
     },
     {
       id: 15,
       name: "Motorgazet",
-      logo: "/placeholder.svg?height=200&width=200",
+      logo: "/sponsors/motorgazet.png",
       address: "",
-      website: "",
+      website: "https://motorgazet.be/",
       phone: "",
     },
     {
       id: 16,
       name: "MX 477",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "Zouwstraat 28, 3600 Genk",
+      logo: "/sponsors/mx477.png",
+      address: "Genk",
       website: "https://www.mx477.be",
-      phone: "",
+      phone: "0475 66 00 81",
     },
     {
       id: 17,
       name: "N M P Fotografie",
-      logo: "/placeholder.svg?height=200&width=200",
+      logo: "/sponsors/nmpfoto.png",
       address: "Limal",
       website: "",
       phone: "",
@@ -145,50 +141,48 @@ export default function SponsorsPage() {
     {
       id: 18,
       name: "Nubus",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "",
-      website: "",
-      phone: "",
+      logo: "/sponsors/nubus.jpg",
+      address: "Kuurne",
+      website: "https://nubus.be/",
+      phone: "056 36 15 55",
     },
     {
       id: 19,
       name: "Red Animals",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "Rue des Pères 1, 7500 Ere",
+      logo: "/sponsors/red animals.jpg",
+      address: "Ere",
       website: "https://red-animals.com",
       phone: "+32 (0) 69 648 372",
     },
     {
       id: 20,
       name: "Rouwcentrum Ter Heide",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "Gentsesteenweg 276, 1730 Asse",
+      logo: "/sponsors/rouwcentrum.png",
+      address: "Asse",
       website: "https://www.rouwcentrumterheide.be",
       phone: "02/306 66 61",
     },
     {
       id: 21,
       name: "Sanrobi",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "Hoofdwegnoord 38, 4574 RB Zuiddorpe",
+      logo: "/sponsors/sanrobi.png",
+      address: "Zuiddorpe",
       website: "https://www.sanrobi.nl",
       phone: "+31(0)6-53 12 27 03",
     },
     {
       id: 22,
       name: "Support4You",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "",
+      address: "Wevelgem",
       website: "",
-      phone: "",
+      phone: "0472 08 28 76",
     },
     {
       id: 23,
       name: "Technicross",
-      logo: "/placeholder.svg?height=200&width=200",
       address: "Havinnes",
-      website: "",
-      phone: "",
+      website: "https://technicross.be/",
+      phone: "069 22 58 45",
     },
   ]
 
@@ -222,15 +216,17 @@ export default function SponsorsPage() {
               style={{ animationDelay: `${0.05 * index}s` }}
             >
               <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="relative h-24 w-24 mb-4">
-                  <Image
-                    src={sponsor.logo || "/placeholder.svg"}
-                    alt={sponsor.name}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
+                {sponsor.logo && sponsor.name !== "C-worx" && sponsor.name !== "DM Consult" && sponsor.name !== "Elektriciteit Van Den Broeke" && sponsor.name !== "HDC Products" && sponsor.name !== "Support4You" && sponsor.name !== "Technicross" && (
+                  <div className="relative h-24 w-24 mb-4">
+                    <Image
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                )}
                 <h3 className="text-xl font-bold mb-2 text-white">{sponsor.name}</h3>
 
                 <div className="mt-2 space-y-2 w-full">
@@ -270,4 +266,3 @@ export default function SponsorsPage() {
     </main>
   )
 }
-

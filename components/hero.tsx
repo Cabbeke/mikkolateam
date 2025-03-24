@@ -29,15 +29,6 @@ export default function Hero() {
             Een motorcross team met passie, opgericht in 1990 door de familie Declercq. Ontdek onze rijders, sponsors en
             evenementen.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Button
-              asChild
-              variant="outline"
-              className="border-mcpink-500 bg-black/30 text-white hover:bg-mcpink-500/20 font-medium focus-visible:focus"
-            >
-              <Link href="#kalender">Bekijk Kalender 2025</Link>
-            </Button>
-          </div>
         </div>
       </div>
 

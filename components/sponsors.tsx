@@ -10,41 +10,37 @@ export default function Sponsors() {
     {
       id: 1,
       name: "All Fire Security",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "Roeselarestraat 180, 8560 Wevelgem",
-      website: "",
-      phone: "",
+      logo: "/sponsors/all fire security.png",
+      address: "Wevelgem",
+      website: "https://allfiresecurity.be/",
+      phone: "+32 (0)56 42 32 29",
     },
     {
       id: 2,
       name: "Bouwwerken Jurgen Delbeke",
-      logo: "/placeholder.svg?height=200&width=200",
-      address: "Groene Dreef 61, 8510 Rollegem",
-      website: "",
-      phone: "",
+      logo: "/sponsors/bouwwerken jurgen delbeke.png",
+      address: "Rollegem",
+      website: "https://www.bouwwerken-delbeke.be/",
+      phone: "0495 93 98 23",
     },
     {
       id: 3,
       name: "C-worx",
-      logo: "/placeholder.svg?height=200&width=200",
-      description: "IT-Solutions",
       address: "Wevelgem",
       website: "",
-      phone: "",
+      phone: "0475 96 60 80",
     },
     {
       id: 4,
       name: "Denicol",
-      logo: "/placeholder.svg?height=200&width=200",
-      description: "Olieleverancier",
+      logo: "/sponsors/denicol.png",
       address: "Ranst",
-      website: "https://www.denicol.com",
-      phone: "",
+      website: "https://www.denicol.com/",
+      phone: "+32 3 485 81 91",
     },
     {
       id: 5,
       name: "DM Consult",
-      logo: "/placeholder.svg?height=200&width=200",
       address: "",
       website: "",
       phone: "",
@@ -52,7 +48,7 @@ export default function Sponsors() {
     {
       id: 6,
       name: "EKS-brillen",
-      logo: "/placeholder.svg?height=200&width=200",
+      logo: "/sponsors/eks-brillen.avif",
       address: "Genk",
       website: "https://eksbrand.com",
       phone: "",
@@ -60,7 +56,6 @@ export default function Sponsors() {
     {
       id: 7,
       name: "Elektriciteit Van Den Broeke",
-      logo: "/placeholder.svg?height=200&width=200",
       address: "Kruishoutem",
       website: "",
       phone: "",
@@ -68,10 +63,9 @@ export default function Sponsors() {
     {
       id: 8,
       name: "Fidufac",
-      logo: "/placeholder.svg?height=200&width=200",
-      description: "Bedrijfsadvies op maat",
-      address: "Cyriel Verschaevestraat 100, 8510 Marke",
-      website: "",
+      logo: "/sponsors/fidufac.png",
+      address: "Marke",
+      website: "https://www.fidufac.be/",
       phone: "056 25 88 76",
     },
   ]
@@ -91,18 +85,18 @@ export default function Sponsors() {
           {sponsors.map((sponsor) => (
             <Card key={sponsor.id} className="bg-black/80 border-mcpink-700 overflow-hidden glow-card shadow-xl">
               <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="relative h-24 w-24 mb-4">
-                  <Image
-                    src={sponsor.logo || "/placeholder.svg"}
-                    alt={sponsor.name}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
+                {sponsor.logo && (
+                  <div className="relative h-24 w-24 mb-4">
+                    <Image
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                )}
                 <h3 className="text-xl font-bold mb-2 text-white">{sponsor.name}</h3>
-
-                {sponsor.description && <p className="text-mcpink-400 text-sm mb-3">{sponsor.description}</p>}
 
                 <div className="mt-2 space-y-2 w-full">
                   {sponsor.address && (
@@ -153,4 +147,3 @@ export default function Sponsors() {
     </section>
   )
 }
-

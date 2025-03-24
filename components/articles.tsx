@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { Calendar, Share2, ChevronDown, ChevronUp, Facebook, Twitter, Linkedin } from "lucide-react"
+import { Calendar, Share2, ChevronDown, ChevronUp, Facebook, Link2 } from "lucide-react"
 
 export default function Articles() {
   const articles = [
@@ -15,26 +15,17 @@ export default function Articles() {
         "We zijn verheugd om onze nieuwe website te lanceren, ontworpen om u beter te informeren over ons team, onze rijders en komende evenementen.",
       fullText:
         "We zijn verheugd om onze nieuwe website te lanceren, ontworpen om u beter te informeren over ons team, onze rijders en komende evenementen. De nieuwe site biedt een verbeterde gebruikerservaring met een modern design en is volledig responsive voor alle apparaten. U kunt nu gemakkelijk navigeren door de verschillende secties om meer te weten te komen over onze geschiedenis, onze talentvolle rijders, onze gewaardeerde sponsors en de volledige kalender voor het 2025 seizoen. We nodigen u uit om de site te verkennen en ons feedback te geven via het contactformulier.",
-      date: "23 maart 2025",
-      image: "/placeholder.svg?height=400&width=600",
+      date: "24 maart 2025",
+      image: "/rijdersvoorstelling groep.jpg",
     },
     {
       id: 2,
-      title: "Indrukwekkende prestatie op Belgisch Kampioenschap",
-      excerpt:
-        "Thomas Declercq behaalt podiumplaats tijdens de laatste ronde van het Belgisch Kampioenschap in Lommel.",
+      title: "Nieuw seizoen gestart op 23 maart",
+      excerpt: "Het nieuwe seizoen van MC MIKKOLA is officieel van start gegaan op 23 maart 2025.",
       fullText:
-        "Thomas Declercq heeft afgelopen weekend een indrukwekkende prestatie neergezet tijdens de laatste ronde van het Belgisch Kampioenschap in Lommel. Na een spannende race wist hij een podiumplaats te bemachtigen, wat zijn positie in het algemeen klassement verder versterkt. De zware zandcondities in Lommel vormden een uitdaging voor alle rijders, maar Thomas toonde zijn technische vaardigheden en doorzettingsvermogen. Het hele team is trots op deze prestatie en kijkt uit naar de komende wedstrijden waar we hopen dit succes voort te zetten.",
-      date: "12 maart 2025",
-      image: "/placeholder.svg?height=400&width=600",
-    },
-    {
-      id: 3,
-      title: "Nieuw teamlid verwelkomd bij MC MIKKOLA",
-      excerpt:
-        "We zijn verheugd om Seppe Maertens te verwelkomen als nieuwste aanwinst voor ons team in het 2025 seizoen.",
-      date: "28 februari 2025",
-      image: "/placeholder.svg?height=400&width=600",
+        "Het nieuwe seizoen van MC MIKKOLA is officieel van start gegaan op 23 maart 2025. We kijken uit naar een jaar vol spannende wedstrijden, nieuwe uitdagingen en geweldige prestaties van onze rijders. Blijf ons volgen voor de laatste updates en resultaten.",
+      date: "23 maart 2025",
+      image: "/openingscross",
     },
   ]
 
@@ -69,11 +60,15 @@ export default function Articles() {
       case "facebook":
         shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`
         break
-      case "twitter":
-        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`
-        break
-      case "linkedin":
-        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`
+      case "copy":
+        navigator.clipboard
+          .writeText(url)
+          .then(() => {
+            alert("Link gekopieerd naar klembord!")
+          })
+          .catch((err) => {
+            console.error("Kon link niet kopiëren: ", err)
+          })
         break
       default:
         break
@@ -161,6 +156,7 @@ export default function Articles() {
                         size="icon"
                         className="h-8 w-8 rounded-full"
                         onClick={() => shareArticle("facebook", article)}
+                        title="Deel op Facebook"
                       >
                         <Facebook className="h-4 w-4 text-mcpink-500" />
                         <span className="sr-only">Deel op Facebook</span>
@@ -169,19 +165,11 @@ export default function Articles() {
                         variant="ghost"
                         size="icon"
                         className="h-8 w-8 rounded-full"
-                        onClick={() => shareArticle("twitter", article)}
+                        onClick={() => shareArticle("copy", article)}
+                        title="Kopieer link"
                       >
-                        <Twitter className="h-4 w-4 text-mcpink-500" />
-                        <span className="sr-only">Deel op Twitter</span>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="h-8 w-8 rounded-full"
-                        onClick={() => shareArticle("linkedin", article)}
-                      >
-                        <Linkedin className="h-4 w-4 text-mcpink-500" />
-                        <span className="sr-only">Deel op LinkedIn</span>
+                        <Link2 className="h-4 w-4 text-mcpink-500" />
+                        <span className="sr-only">Kopieer link</span>
                       </Button>
                     </div>
                   )}

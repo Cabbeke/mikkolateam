@@ -1,10 +1,14 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Calendar, Mail, MapPin, Phone, ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useState } from "react"
 
 export default function Footer() {
+  const [isHovering, setIsHovering] = useState(false)
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -29,40 +33,33 @@ export default function Footer() {
           <p className="text-gray-300 mb-4">Motorcross team opgericht in 1990 door familie Declercq.</p>
           <div className="flex items-center gap-2 mb-2">
             <MapPin className="h-4 w-4 text-mcpink-500" />
-            <span className="text-gray-300">Brugge, België</span>
+            <span className="text-gray-300">Kluisbergen, België</span>
           </div>
           <div className="flex items-center gap-2 mb-2">
             <Phone className="h-4 w-4 text-mcpink-500" />
-            <span className="text-gray-300">+32 123 45 67 89</span>
+            <span className="text-gray-300">+32 477 77 21 57</span>
           </div>
           <div className="flex items-center gap-2">
             <Mail className="h-4 w-4 text-mcpink-500" />
-            <span className="text-gray-300">info@mcmikkola.be</span>
+            <span className="text-gray-300">heikkideclercq@gmail.com</span>
           </div>
         </div>
 
         <div className="animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-          <h3 className="text-xl font-bold mb-4 gradient-text">Komende Evenementen</h3>
+          <h3 className="text-xl font-bold mb-4 gradient-text">Nieuws</h3>
           <ul className="space-y-3">
             <li className="flex items-start gap-2">
               <Calendar className="h-4 w-4 text-mcpink-500 mt-1 flex-shrink-0" />
               <div>
-                <p className="font-medium">Motorcross Lommel</p>
-                <p className="text-sm text-gray-400">15 April 2025</p>
+          <p className="font-medium">Nieuwe website</p>
+          <p className="text-sm text-gray-400">We zijn verheugd om onze nieuwe website te lanceren, ontworpen om u beter te informeren over ons team, onze rijders en komende evenementen.</p>
               </div>
             </li>
             <li className="flex items-start gap-2">
               <Calendar className="h-4 w-4 text-mcpink-500 mt-1 flex-shrink-0" />
               <div>
-                <p className="font-medium">Belgisch Kampioenschap</p>
-                <p className="text-sm text-gray-400">2 Mei 2025</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-2">
-              <Calendar className="h-4 w-4 text-mcpink-500 mt-1 flex-shrink-0" />
-              <div>
-                <p className="font-medium">Motorcross Gent</p>
-                <p className="text-sm text-gray-400">20 Mei 2025</p>
+          <p className="font-medium">Seizoensstart</p>
+          <p className="text-sm text-gray-400">Het nieuwe seizoen van MC MIKKOLA is officieel van start gegaan op 23 maart 2025.</p>
               </div>
             </li>
           </ul>
@@ -113,10 +110,23 @@ export default function Footer() {
               href="https://webworxcabbeke.be"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block hover:opacity-80 transition-opacity focus-visible:focus"
+              className="inline-block focus-visible:focus"
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
             >
-              <div className="bg-white rounded-md p-2 inline-flex items-center">
-                <span className="text-black font-bold">WebworX Cabbeke</span>
+              <div className="relative bg-white rounded-md p-2 inline-flex items-center transition-all duration-300 hover:shadow-lg hover:shadow-mcpink-500/30">
+                {isHovering ? (
+                  <div className="relative h-8 w-32 animate-fadeIn">
+                    <Image
+                      src="/logo1.png"
+                      alt="WebworX Cabbeke Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ) : (
+                  <span className="text-black font-bold">WebWorx Cabbeke</span>
+                )}
               </div>
             </Link>
           </div>
