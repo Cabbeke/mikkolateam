@@ -5,15 +5,27 @@ import Image from "next/image"
 import { Calendar, Mail, MapPin, Phone, ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 
 export default function Footer() {
   const [isHovering, setIsHovering] = useState(false)
+  const pathname = usePathname()
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     })
+  }
+
+  // Functie om de juiste link te genereren
+  const getNavLink = (section: string) => {
+    // Als we op de homepage zijn, gebruik een anchor link
+    if (pathname === "/") {
+      return `#${section}`
+    }
+    // Anders, ga naar de homepage met de anchor
+    return `/#${section}`
   }
 
   return (
@@ -51,15 +63,20 @@ export default function Footer() {
             <li className="flex items-start gap-2">
               <Calendar className="h-4 w-4 text-mcpink-500 mt-1 flex-shrink-0" />
               <div>
-          <p className="font-medium">Nieuwe website</p>
-          <p className="text-sm text-gray-400">We zijn verheugd om onze nieuwe website te lanceren, ontworpen om u beter te informeren over ons team, onze rijders en komende evenementen.</p>
+                <p className="font-medium">Nieuwe website</p>
+                <p className="text-sm text-gray-400">
+                  We zijn verheugd om onze nieuwe website te lanceren, ontworpen om u beter te informeren over ons team,
+                  onze rijders en komende evenementen.
+                </p>
               </div>
             </li>
             <li className="flex items-start gap-2">
               <Calendar className="h-4 w-4 text-mcpink-500 mt-1 flex-shrink-0" />
               <div>
-          <p className="font-medium">Seizoensstart</p>
-          <p className="text-sm text-gray-400">Het nieuwe seizoen van MC MIKKOLA is officieel van start gegaan op 23 maart 2025.</p>
+                <p className="font-medium">Seizoensstart</p>
+                <p className="text-sm text-gray-400">
+                  Het nieuwe seizoen van MC MIKKOLA is officieel van start gegaan op 23 maart 2025.
+                </p>
               </div>
             </li>
           </ul>
@@ -80,7 +97,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="#sponsors"
+                href={getNavLink("sponsors")}
                 className="text-gray-300 hover:text-mcpink-500 transition-colors focus-visible:focus"
               >
                 Onze sponsors
@@ -96,7 +113,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="#contact"
+                href={getNavLink("contact")}
                 className="text-gray-300 hover:text-mcpink-500 transition-colors focus-visible:focus"
               >
                 Contact
@@ -117,12 +134,7 @@ export default function Footer() {
               <div className="relative bg-white rounded-md p-2 inline-flex items-center transition-all duration-300 hover:shadow-lg hover:shadow-mcpink-500/30">
                 {isHovering ? (
                   <div className="relative h-8 w-32 animate-fadeIn">
-                    <Image
-                      src="/logo1.png"
-                      alt="WebworX Cabbeke Logo"
-                      fill
-                      className="object-contain"
-                    />
+                    <Image src="/logo1.png" alt="WebworX Cabbeke Logo" fill className="object-contain" />
                   </div>
                 ) : (
                   <span className="text-black font-bold">WebWorx Cabbeke</span>

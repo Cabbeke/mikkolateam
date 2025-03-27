@@ -1,8 +1,129 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Phone, MapPin, ExternalLink, FileText } from "lucide-react"
+import { Mail, Phone, MapPin, FileText } from "lucide-react"
 import Link from "next/link"
+import PhotoCarousel from "./photo-carousel"
 
 export default function Contact() {
+  // Archieffoto's voor de carousel
+  const archivePhotos = [
+    {
+      src: "/archief/1996.jpg",
+      alt: "Teamfoto 1996",
+    },
+    {
+      src: "/archief/1997.jpg",
+      alt: "Teamfoto 1997",
+    },
+    {
+      src: "/archief/1998.jpg",
+      alt: "Teamfoto 1998",
+    },
+    {
+      src: "/archief/1999.jpg",
+      alt: "Teamfoto 1999",
+    },
+    {
+      src: "/archief/2000.jpg",
+      alt: "Teamfoto 2000",
+    },
+    {
+      src: "/archief/2001.jpg",
+      alt: "Teamfoto 2001",
+    },
+    {
+      src: "/archief/2002.jpg",
+      alt: "Teamfoto 2002",
+    },
+    {
+      src: "/archief/2003.jpg",
+      alt: "Teamfoto 2003",
+    },
+    {
+      src: "/archief/2004.jpg",
+      alt: "Teamfoto 2004",
+    },
+    {
+      src: "/archief/2005.jpg",
+      alt: "Teamfoto 2005",
+    },
+    {
+      src: "/archief/2006.jpg",
+      alt: "Teamfoto 2006",
+    },
+    {
+      src: "/archief/2007.jpg",
+      alt: "Teamfoto 2007",
+    },
+    {
+      src: "/archief/2008.jpg",
+      alt: "Teamfoto 2008",
+    },
+    {
+      src: "/archief/2009.jpg",
+      alt: "Teamfoto 2009",
+    },
+    {
+      src: "/archief/2010.jpg",
+      alt: "Teamfoto 2010",
+    },
+    {
+      src: "/archief/2011.jpg",
+      alt: "Teamfoto 2011",
+    },
+    {
+      src: "/archief/2012.jpg",
+      alt: "Teamfoto 2012",
+    },
+    {
+      src: "/archief/2013.jpg",
+      alt: "Teamfoto 2013",
+    },
+    {
+      src: "/archief/2014.jpg",
+      alt: "Teamfoto 2014",
+    },
+    {
+      src: "/archief/2015.jpg",
+      alt: "Teamfoto 2015",
+    },
+    {
+      src: "/archief/2016.jpg",
+      alt: "Teamfoto 2016",
+    },
+    {
+      src: "/archief/2017.jpg",
+      alt: "Teamfoto 2017",
+    },
+    {
+      src: "/archief/2018.jpg",
+      alt: "Teamfoto 2018",
+    },
+    {
+      src: "/archief/2019.jpg",
+      alt: "Teamfoto 2019",
+    },
+    {
+      src: "/archief/2020.jpg",
+      alt: "Teamfoto 2020",
+    },
+    {
+      src: "/archief/2021.jpg",
+      alt: "Teamfoto 2021",
+    },
+    {
+      src: "/archief/2022.jpg",
+      alt: "Teamfoto 2022",
+    },
+    {
+      src: "/archief/2023.jpg",
+      alt: "Teamfoto 2023",
+    },
+    {
+      src: "/archief/2024.jpg",
+      alt: "Teamfoto 2024",
+    },
+  ]
+
   return (
     <section id="contact" className="py-16 pt-24 -mt-16">
       <div className="container">
@@ -14,32 +135,15 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="lg:row-span-2 animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-            <div className="relative w-full h-[300px] md:h-full rounded-lg overflow-hidden">
-              <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2075.7793481017397!2d3.5006139759408814!3d50.78547107165808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c319f90851cdf5%3A0xf33f373caaa16cd7!2sMeulesaevel%2013%2C%209690%20Kluisbergen!5e1!3m2!1snl!2sbe!4v1742827402496!5m2!1snl!2sbe"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="MC MIKKOLA locatie"
-              className="rounded-lg shadow-lg"
-              ></iframe>
-            </div>
-            <div className="mt-4 text-center">
-              <Link
-              href="https://maps.google.com/?q=Brugge,België"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-mcpink-500 hover:text-mcpink-400 transition-colors"
-              >
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Open in Google Maps
-              </Link>
-            </div>
-            </div>
+          <Card
+            className="bg-black/40 border-mcpink-700 glow-card animate-fadeIn h-full"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <CardContent className="p-6 h-full">
+              <h3 className="text-xl font-bold mb-6">Archief Foto's</h3>
+              <PhotoCarousel photos={archivePhotos} interval={4000} />
+            </CardContent>
+          </Card>
 
           <div className="space-y-6 animate-fadeIn" style={{ animationDelay: "0.4s" }}>
             <Card className="bg-black/40 border-mcpink-700 glow-card">

@@ -26,6 +26,7 @@ export default function Sponsors() {
     {
       id: 3,
       name: "C-worx",
+      logo: "/sponsors/thumbnail_Logo Cworx.png",
       address: "Wevelgem",
       website: "",
       phone: "0475 96 60 80",
@@ -83,7 +84,8 @@ export default function Sponsors() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {sponsors.map((sponsor) => (
-            <Card key={sponsor.id} className="bg-black/80 border-mcpink-700 overflow-hidden glow-card shadow-xl">
+            <Card key={sponsor.id}               className="bg-gray-800 border-mcpink-700 overflow-hidden glow-card shadow-xl animate-fadeIn"
+>
               <CardContent className="p-6 flex flex-col items-center text-center">
                 {sponsor.logo && (
                   <div className="relative h-24 w-24 mb-4">
