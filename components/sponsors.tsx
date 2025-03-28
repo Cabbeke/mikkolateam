@@ -13,7 +13,6 @@ export default function Sponsors() {
       logo: "/sponsors/all fire security.png",
       address: "Wevelgem",
       website: "https://allfiresecurity.be/",
-      phone: "+32 (0)56 42 32 29",
     },
     {
       id: 2,
@@ -21,7 +20,6 @@ export default function Sponsors() {
       logo: "/sponsors/bouwwerken jurgen delbeke.png",
       address: "Rollegem",
       website: "https://www.bouwwerken-delbeke.be/",
-      phone: "0495 93 98 23",
     },
     {
       id: 3,
@@ -29,7 +27,6 @@ export default function Sponsors() {
       logo: "/sponsors/thumbnail_Logo Cworx.png",
       address: "Wevelgem",
       website: "",
-      phone: "0475 96 60 80",
     },
     {
       id: 4,
@@ -37,14 +34,12 @@ export default function Sponsors() {
       logo: "/sponsors/denicol.png",
       address: "Ranst",
       website: "https://www.denicol.com/",
-      phone: "+32 3 485 81 91",
     },
     {
       id: 5,
       name: "DM Consult",
       address: "",
       website: "",
-      phone: "",
     },
     {
       id: 6,
@@ -52,14 +47,12 @@ export default function Sponsors() {
       logo: "/sponsors/eks-brillen.avif",
       address: "Genk",
       website: "https://eksbrand.com",
-      phone: "",
     },
     {
       id: 7,
       name: "Elektriciteit Van Den Broeke",
       address: "Kruishoutem",
       website: "",
-      phone: "",
     },
     {
       id: 8,
@@ -67,7 +60,6 @@ export default function Sponsors() {
       logo: "/sponsors/fidufac.png",
       address: "Marke",
       website: "https://www.fidufac.be/",
-      phone: "056 25 88 76",
     },
   ]
 
@@ -105,13 +97,6 @@ export default function Sponsors() {
                     <div className="flex items-start gap-2">
                       <MapPin className="h-4 w-4 text-mcpink-500 mt-1 flex-shrink-0" />
                       <span className="text-white text-sm text-left">{sponsor.address}</span>
-                    </div>
-                  )}
-
-                  {sponsor.phone && (
-                    <div className="flex items-start gap-2">
-                      <Phone className="h-4 w-4 text-mcpink-500 mt-1 flex-shrink-0" />
-                      <span className="text-white text-sm text-left">{sponsor.phone}</span>
                     </div>
                   )}
 

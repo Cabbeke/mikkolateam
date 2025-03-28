@@ -122,6 +122,10 @@ export default function Contact() {
       src: "/archief/2024.jpg",
       alt: "Teamfoto 2024",
     },
+    {
+      src: "/archief/2025.jpg",
+      alt: "Teamfoto 2025",
+    },
   ]
 
   return (

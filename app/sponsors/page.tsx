@@ -12,7 +12,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/all fire security.png",
       address: "Wevelgem",
       website: "https://allfiresecurity.be/",
-      phone: "+32 (0)56 42 32 29",
     },
     {
       id: 2,
@@ -20,7 +19,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/bouwwerken jurgen delbeke.png",
       address: "Rollegem",
       website: "https://www.bouwwerken-delbeke.be/",
-      phone: "0495 93 98 23",
     },
     {
       id: 3,
@@ -28,7 +26,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/thumbnail_Logo Cworx.png",
       address: "Wevelgem",
       website: "",
-      phone: "0475 96 60 80",
     },
     {
       id: 4,
@@ -36,14 +33,12 @@ export default function SponsorsPage() {
       logo: "/sponsors/denicol.png",
       address: "Ranst",
       website: "https://www.denicol.com/",
-      phone: "+32 3 485 81 91",
     },
     {
       id: 5,
       name: "DM Consult",
       address: "",
       website: "",
-      phone: "",
     },
     {
       id: 6,
@@ -51,14 +46,12 @@ export default function SponsorsPage() {
       logo: "/sponsors/eks-brillen.avif",
       address: "Genk",
       website: "https://eksbrand.com",
-      phone: "",
     },
     {
       id: 7,
       name: "Elektriciteit Van Den Broeke",
       address: "Kruishoutem",
       website: "",
-      phone: "",
     },
     {
       id: 8,
@@ -66,7 +59,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/fidufac.png",
       address: "Marke",
       website: "https://www.fidufac.be/",
-      phone: "056 25 88 76",
     },
     {
       id: 9,
@@ -74,7 +66,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/gemeente deerlijk.avif",
       address: "Deerlijk",
       website: "https://www.deerlijk.be/",
-      phone: "056 69 47 20",
     },
     {
       id: 10,
@@ -82,7 +73,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/logo-hdc-products - kopie.png",
       address: "Kluisbergen",
       website: "",
-      phone: "",
     },
     {
       id: 11,
@@ -90,7 +80,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/homet.png",
       address: "Izegem",
       website: "https://www.homet.be",
-      phone: "0478/90.38.56",
     },
     {
       id: 12,
@@ -98,7 +87,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/logoluc wybon-1.png",
       address: "Marke",
       website: "https://www.wybon.be/",
-      phone: "+32 (0)479 55 05 41",
     },
     {
       id: 13,
@@ -106,7 +94,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/monster.webp",
       address: "Verenigde Staten",
       website: "https://www.monsterenergy.com/",
-      phone: "1-866-322-4466",
     },
     {
       id: 14,
@@ -114,7 +101,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/motor2000ktm.png",
       address: "Heinkenszand",
       website: "https://www.motor2000.nl",
-      phone: "+31 113 567200",
     },
     {
       id: 15,
@@ -122,7 +108,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/motorgazet.png",
       address: "",
       website: "https://motorgazet.be/",
-      phone: "",
     },
     {
       id: 16,
@@ -130,7 +115,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/mx477.png",
       address: "Genk",
       website: "https://www.mx477.be",
-      phone: "0475 66 00 81",
     },
     {
       id: 17,
@@ -138,7 +122,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/nmpfoto.png",
       address: "Limal",
       website: "",
-      phone: "",
     },
     {
       id: 18,
@@ -146,7 +129,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/nubus.jpg",
       address: "Kuurne",
       website: "https://nubus.be/",
-      phone: "056 36 15 55",
     },
     {
       id: 19,
@@ -154,7 +136,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/red animals.webp",
       address: "Ere",
       website: "https://red-animals.com",
-      phone: "+32 (0) 69 648 372",
     },
     {
       id: 20,
@@ -162,7 +143,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/logo suport.png",
       address: "Wevelgem",
       website: "",
-      phone: "0472 08 28 76",
     },
     {
       id: 21,
@@ -170,7 +150,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/T-shirtLogo debaillie.png",
       address: "Roeselare",
       website: "http://www.debaillie.be/",
-      phone: "051 24 49 20",
     },
     {
       id: 22,
@@ -178,7 +157,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/logo sagaert.png",
       address: "Meulebeke",
       website: "https://www.leonsagaert.be/",
-      phone: "051 48 90 45",
     },
     {
       id: 23,
@@ -186,7 +164,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/logo SKYSPAN (1)-1.png",
       address: "Bellegem",
       website: "https://skyspan.be/",
-      phone: "0479 96 99 68",
     },
     {
       id: 24,
@@ -194,7 +171,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/logo_Esjot_Sprockets_200x80.png",
       address: "Ense-Höingen",
       website: "https://www.esjot.com/en/",
-      phone: "0049 - (0) 29 38 - 97 51 - 0",
     },
     {
       id: 25,
@@ -202,7 +178,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/ARP LOGO.jpg",
       address: "Frasnoy",
       website: "https://alexracingparts.com/",
-      phone: "+33 7 60 76 99 54",
     },
     {
       id: 26,
@@ -210,7 +185,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/P.09 logopaulke.jpg",
       address: "",
       website: "",
-      phone: "",
     },
     {
       id: 27,
@@ -218,7 +192,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/logowybon.jpg",
       address: "",
       website: "",
-      phone: "",
     },
     {
       id: 28,
@@ -226,7 +199,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/Logo-Rougraff.jpg",
       address: "Dour",
       website: "https://www.rougraff.be/",
-      phone: "0472 08 28 76",
     },
     {
       id: 29,
@@ -234,7 +206,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/logoconde.jpg",
       address: "",
       website: "https://www.mc-conde.fr/",
-      phone: "",
     },
     {
       id: 30,
@@ -242,7 +213,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/logomariman2023.jpg",
       address: "Stekene",
       website: "https://mariman-dakwerken.be/",
-      phone: "03 296 67 62",
     },
     {
       id: 31,
@@ -250,7 +220,6 @@ export default function SponsorsPage() {
       logo: "/sponsors/logo_Maxpac - Logo - Dark.png",
       address: "Temse",
       website: "https://maxpac.be/",
-      phone: "03 710 51 70",
     },
     {
       id: 32,
@@ -258,23 +227,19 @@ export default function SponsorsPage() {
       logo: "/sponsors/logo ovaamotor.webp",
       address: "Nederland",
       website: "https://www.ovaamotors.nl/",
-      phone: "+31 118 461 485",
     },
     {
       id: 33,
       name: "WLM sportswear",
       logo: "/sponsors/logo wlm.jpg",
       address: "Mill",
-      website: "https://www.wlm-design.nl/",
-      phone: "(+32) 012-216117",
-    },
+      website: "https://www.wlm-design.nl/",    },
     {
       id: 34,
       name: "Immerfix",
       logo: "/sponsors/logo Immerfix.png",
       address: "Begijnendijk",
       website: "https://immerfix.be/",
-      phone: "+32 (0)495 500 755",
     },
   ]
 
@@ -326,13 +291,6 @@ export default function SponsorsPage() {
                 <div className="flex items-start gap-2">
                   <MapPin className="h-4 w-4 text-mcpink-500 mt-1 flex-shrink-0" />
                   <span className="text-white text-sm text-left">{sponsor.address}</span>
-                </div>
-                )}
-
-                {sponsor.phone && (
-                <div className="flex items-start gap-2">
-                  <Phone className="h-4 w-4 text-mcpink-500 mt-1 flex-shrink-0" />
-                  <span className="text-white text-sm text-left">{sponsor.phone}</span>
                 </div>
                 )}
 
