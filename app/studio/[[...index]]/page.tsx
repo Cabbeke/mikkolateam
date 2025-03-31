@@ -1,9 +1,12 @@
-"use client"
+import StudioPageClient from "./StudioPageClient"
 
-import { NextStudio } from "next-sanity/studio"
-import config from "@/sanity.config"
+// Deze functie is nodig voor statische export
+export async function generateStaticParams() {
+  // Dit is een workaround - we genereren alleen de basis route
+  return [{ index: [] }]
+}
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+  return <StudioPageClient />
 }
 
