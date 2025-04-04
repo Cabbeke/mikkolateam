@@ -10,11 +10,8 @@ const client = createClient({
   useCdn: true, // Optional: Use the CDN for faster responses
 });
 
-export async function getNewsItems() {
-  return await client.fetch(`*[_type == "news"]{_id, title, slug, mainImage, publishedAt}`);
-}
 export default async function NewsPage() {
-  const news = await fetchNewsItems()
+  const news = await client.fetch(`*[_type == "news"]{_id, title, slug, mainImage, publishedAt}`);
 
   return (
     <div className="container mx-auto py-12">
