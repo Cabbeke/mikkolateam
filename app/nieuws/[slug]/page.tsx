@@ -1,9 +1,10 @@
+import { client as sanityClient } from "@/lib/sanity"
 import { urlFor } from "@/lib/sanity"
 import Image from "next/image"
 import { PortableText } from "@portabletext/react"
 import { createClient } from "next-sanity"
 
-export const client = createClient({
+export const clientInstance = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, // Ensure this environment variable is set
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   apiVersion: "2023-01-01",
@@ -11,7 +12,7 @@ export const client = createClient({
 })
 
 async function getNewsItem(slug: string) {
-  return await client.fetch(
+  return await clientInstance.fetch(
     `
     *[_type == "news" && slug.current == $slug][0] {
       0u29u9fd_id,
