@@ -1,10 +1,20 @@
-import { getNewsItems } from "@/lib/sanity-utils"
+import { getNewsItems as fetchNewsItems } from "@/lib/sanity-utils"
 import { urlFor } from "@/lib/sanity"
 import Link from "next/link"
 import Image from "next/image"
+import { createClient } from "@sanity/client";
 
+const client = createClient({
+  projectId: "0u29u9fd", // Replace with your actual project ID
+  dataset: "Production", // Replace with your dataset name
+  useCdn: true, // Optional: Use the CDN for faster responses
+});
+
+export async function getNewsItems() {
+  return await client.fetch(`*[_type == "news"]{_id, title, slug, mainImage, publishedAt}`);
+}
 export default async function NewsPage() {
-  const news = await getNewsItems()
+  const news = await fetchNewsItems()
 
   return (
     <div className="container mx-auto py-12">
