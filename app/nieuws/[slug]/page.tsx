@@ -31,8 +31,9 @@ const ptComponents = {
   },
 }
 
-export default async function NewsItemPage({ params }: { params: { slug: string } }) {
-  const newsItem = await getNewsItem(params.slug)
+export default async function NewsItemPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const newsItem = await getNewsItem(slug)
 
   if (!newsItem) {
     return <div>Nieuws item niet gevonden</div>
