@@ -1,4 +1,4 @@
-import { client } from "../sanity"
+import { client } from "./sanity"
 
 // Functie om nieuws items op te halen
 export async function getNewsItems() {

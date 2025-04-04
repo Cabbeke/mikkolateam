@@ -1,5 +1,5 @@
-import { getNewsItems } from "@/lib/sanity/sanity-utils"
-import { urlFor } from "@/lib/sanity/sanity"
+import { getNewsItems } from "@/lib/sanity-utils"
+import { urlFor } from "@/lib/sanity"
 import Link from "next/link"
 import Image from "next/image"
 
