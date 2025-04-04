@@ -86,7 +86,7 @@ export default function SponsorsPage() {
       name: "Luc Wybon BVBA",
       logo: "/sponsors/logoluc wybon-1.png",
       address: "Marke",
-      website: "https://www.wybon.be/",
+      website: "",
     },
     {
       id: 13,
@@ -191,7 +191,7 @@ export default function SponsorsPage() {
       name: "Laurence Wybon",
       logo: "/sponsors/logowybon.jpg",
       address: "",
-      website: "",
+      website: "https://www.wybon.be/",
     },
     {
       id: 28,
