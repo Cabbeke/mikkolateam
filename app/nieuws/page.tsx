@@ -6,8 +6,7 @@ import { createClient } from "@sanity/client";
 
 const client = createClient({
   projectId: "0u29u9fd", // Replace with your actual project ID
-  dataset: "Production", // Replace with your dataset name
-  useCdn: true, // Optional: Use the CDN for faster responses
+  dataset: "production", // Replace with your dataset name
 });
 
 export default async function NewsPage() {

@@ -7,7 +7,7 @@ async function getNewsItem(slug: string) {
   return await client.fetch(
     `
     *[_type == "news" && slug.current == $slug][0] {
-      _id,
+      0u29u9fd_id,
       title,
       slug,
       publishedAt,
