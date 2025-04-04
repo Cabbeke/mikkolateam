@@ -4,6 +4,11 @@ import { PortableText } from "@portabletext/react"
 import { notFound } from "next/navigation"
 import Image from "next/image"
 
+type PageParams = {
+    params: {
+      slug: string
+    }
+  }
 // Functie om pagina data op te halen uit Sanity
 async function getPage(slug: string) {
   return await client.fetch(
