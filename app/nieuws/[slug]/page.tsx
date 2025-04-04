@@ -1,10 +1,10 @@
-import { client as sanityClient } from "@/lib/sanity"
+// Removed unused import
 import { urlFor } from "@/lib/sanity"
 import Image from "next/image"
 import { PortableText } from "@portabletext/react"
 import { createClient } from "next-sanity"
 
-export const clientInstance = createClient({
+const clientInstance = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, // Ensure this environment variable is set
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   apiVersion: "2023-01-01",
