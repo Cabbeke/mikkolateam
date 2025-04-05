@@ -1,0 +1,7 @@
+name = "mikkolateam"
+compatibility_date = "2025-04-05"
+
+pages_build_output_dir = ".vercel/output"
+
+[env.production]
+compatibility_flags = ["nodejs_compat"]
