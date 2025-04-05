@@ -4,7 +4,7 @@ import imageUrlBuilder from "@sanity/image-url"
 // Hardcoded waarden voor testen (ALLEEN VOOR ONTWIKKELING)
 // Gebruik de waarde die je in je Vercel dashboard ziet (0u29u9fd)
 const projectId = "4a0enxp6s" // Vervang dit door je echte Project ID uit je Vercel dashboard
-const dataset = "production"
+const dataset = "Production"
 
 export const client = createClient({
   projectId,
