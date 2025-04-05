@@ -1,50 +1,13 @@
-// Removed unused import
-import { urlFor } from "@/lib/sanity"
-import Image from "next/image"
+import { getNewsItem, urlFor } from "@/lib/sanity"
 import { PortableText } from "@portabletext/react"
-import { createClient } from "next-sanity"
+import Image from "next/image"
+import { notFound } from "next/navigation"
 
-const clientInstance = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, // Ensure this environment variable is set
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-  apiVersion: "2023-01-01",
-  useCdn: true,
-})
-
-async function getNewsItem(slug: string) {
-  return await clientInstance.fetch(
-    `
-    *[_type == "news" && slug.current == $slug][0] {
-      0u29u9fd_id,
-      title,
-      slug,
-      publishedAt,
-      mainImage,
-      body
-    }
-  `,
-    { slug },
-  )
-}
-
-const ptComponents = {
-  types: {
-    image: ({ value }: any) => {
-      return (
-        <div className="relative w-full h-96 my-8">
-          <Image src={urlFor(value).url() || "/placeholder.svg"} alt="" fill className="object-contain" />
-        </div>
-      )
-    },
-  },
-}
-
-export default async function NewsItemPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const newsItem = await getNewsItem(slug)
+export default async function NewsItemPage({ params }: { params: { slug: string } }) {
+  const newsItem = await getNewsItem(params.slug)
 
   if (!newsItem) {
-    return <div>Nieuws item niet gevonden</div>
+    return notFound()
   }
 
   return (
@@ -64,7 +27,18 @@ export default async function NewsItemPage({ params }: { params: Promise<{ slug:
       )}
 
       <div className="prose max-w-none">
-        <PortableText value={newsItem.body} components={ptComponents} />
+        <PortableText
+          value={newsItem.body}
+          components={{
+            types: {
+              image: ({ value }: any) => (
+                <div className="relative w-full h-96 my-8">
+                  <Image src={urlFor(value).url() || "/placeholder.svg"} alt="" fill className="object-contain" />
+                </div>
+              ),
+            },
+          }}
+        />
       </div>
     </div>
   )
