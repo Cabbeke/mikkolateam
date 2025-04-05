@@ -1,61 +1,42 @@
-import { getNewsItem, getNewsItems, urlFor } from '@/lib/sanity'
-import { PortableText } from '@portabletext/react'
+import { getNewsItems, urlFor } from '@/lib/sanity'
+import Link from 'next/link'
 import Image from 'next/image'
-import { notFound } from 'next/navigation'
 
-// Functie om alle mogelijke slugs vooraf te genereren
-export async function generateStaticParams() {
-  const news = await getNewsItems()
-  
-  return news.map((item) => ({
-    slug: item.slug.current,
-  }))
-}
-
-export default async function NewsItemPage({ params }) {
-  const newsItem = await getNewsItem(params.slug)
-  
-  if (!newsItem) {
-    return notFound()
-  }
-  
-  return (
-    <div className="container mx-auto py-12 max-w-3xl">
-      <h1 className="text-4xl font-bold mb-4">{newsItem.title}</h1>
-      <p className="text-gray-500 mb-8">
-        {new Date(newsItem.publishedAt).toLocaleDateString('nl-NL')}
-      </p>
-      
-      {newsItem.mainImage && (
-        <div className="relative w-full h-96 mb-8">
-          <Image
-            src={urlFor(newsItem.mainImage).url() || "/placeholder.svg"}
-            alt={newsItem.title}
-            fill
-            className="object-cover rounded-lg"
-          />
-        </div>
-      )}
-      
-      <div className="prose max-w-none">
-        <PortableText 
-          value={newsItem.body} 
-          components={{
-            types: {
-              image: ({ value }) => (
-                <div className="relative w-full h-96 my-8">
-                  <Image
-                    src={urlFor(value).url() || "/placeholder.svg"}
-                    alt=""
-                    fill
-                    className="object-contain"
-                  />
+export default async function NewsPage() {
+  try {
+    const news = await getNewsItems()
+    
+    return (
+      <div className="container mx-auto py-12">
+        <h1 className="text-3xl font-bold mb-8">Nieuws</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {news.map((item) => (
+            <Link href={`/nieuws/${item.slug.current}`} key={item._id}>
+              <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                {item.mainImage && (
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src={urlFor(item.mainImage).url() || "/placeholder.svg"}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <div className="p-4">
+                  <h2 className="text-xl font-semibold">{item.title}</h2>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {new Date(item.publishedAt).toLocaleDateString('nl-NL')}
+                  </p>
                 </div>
-              ),
-            },
-          }}
-        />
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
-  )
+    )
+  } catch (error) {
+    console.error('Error rendering news page:', error)
+    return <div>Er is een fout opgetreden bij het laden van de nieuwspagina.</div>
+  }
 }
