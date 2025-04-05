@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Verwijder de output configuratie
-  // output: 'export', // Verwijder deze regel of zet hem in commentaar
+  output: 'export',
   
   images: {
     remotePatterns: [
