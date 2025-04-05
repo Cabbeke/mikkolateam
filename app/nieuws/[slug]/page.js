@@ -1,20 +1,31 @@
-import { getNewsItem, urlFor } from "@/lib/sanity"
-import { PortableText } from "@portabletext/react"
-import Image from "next/image"
-import { notFound } from "next/navigation"
+import { getNewsItem, getNewsItems, urlFor } from '@/lib/sanity'
+import { PortableText } from '@portabletext/react'
+import Image from 'next/image'
+import { notFound } from 'next/navigation'
+
+// Functie om alle mogelijke slugs vooraf te genereren
+export async function generateStaticParams() {
+  const news = await getNewsItems()
+  
+  return news.map((item) => ({
+    slug: item.slug.current,
+  }))
+}
 
 export default async function NewsItemPage({ params }) {
   const newsItem = await getNewsItem(params.slug)
-
+  
   if (!newsItem) {
     return notFound()
   }
-
+  
   return (
     <div className="container mx-auto py-12 max-w-3xl">
       <h1 className="text-4xl font-bold mb-4">{newsItem.title}</h1>
-      <p className="text-gray-500 mb-8">{new Date(newsItem.publishedAt).toLocaleDateString("nl-NL")}</p>
-
+      <p className="text-gray-500 mb-8">
+        {new Date(newsItem.publishedAt).toLocaleDateString('nl-NL')}
+      </p>
+      
       {newsItem.mainImage && (
         <div className="relative w-full h-96 mb-8">
           <Image
@@ -25,15 +36,20 @@ export default async function NewsItemPage({ params }) {
           />
         </div>
       )}
-
+      
       <div className="prose max-w-none">
-        <PortableText
-          value={newsItem.body}
+        <PortableText 
+          value={newsItem.body} 
           components={{
             types: {
               image: ({ value }) => (
                 <div className="relative w-full h-96 my-8">
-                  <Image src={urlFor(value).url() || "/placeholder.svg"} alt="" fill className="object-contain" />
+                  <Image
+                    src={urlFor(value).url() || "/placeholder.svg"}
+                    alt=""
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               ),
             },
@@ -43,4 +59,3 @@ export default async function NewsItemPage({ params }) {
     </div>
   )
 }
-
