@@ -1,21 +1,17 @@
 import { createClient } from "next-sanity"
 import imageUrlBuilder from "@sanity/image-url"
 
-// Gebruik de environment variables
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production"
-
-// Controleer of de projectId bestaat
-if (!projectId) {
-  throw new Error("Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID")
-}
+// Hardcoded waarden voor testen (ALLEEN VOOR ONTWIKKELING)
+// Gebruik de waarde die je in je Vercel dashboard ziet (0u29u9fd)
+const projectId = "4a0enxp6s" // Vervang dit door je echte Project ID uit je Vercel dashboard
+const dataset = "production"
 
 export const client = createClient({
   projectId,
   dataset,
   apiVersion: "2023-05-03",
   useCdn: process.env.NODE_ENV === "production",
-  token: process.env.SANITY_API_READ_TOKEN,
+  token: process.env.SANITY_API_READ_TOKEN || undefined,
 })
 
 // Helper functie voor afbeeldingen
