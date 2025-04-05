@@ -3,7 +3,7 @@ import { PortableText } from "@portabletext/react"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 
-export default async function NewsItemPage({ params }: { params: { slug: string } }) {
+export default async function NewsItemPage({ params }) {
   const newsItem = await getNewsItem(params.slug)
 
   if (!newsItem) {
@@ -31,7 +31,7 @@ export default async function NewsItemPage({ params }: { params: { slug: string 
           value={newsItem.body}
           components={{
             types: {
-              image: ({ value }: any) => (
+              image: ({ value }) => (
                 <div className="relative w-full h-96 my-8">
                   <Image src={urlFor(value).url() || "/placeholder.svg"} alt="" fill className="object-contain" />
                 </div>
