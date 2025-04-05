@@ -1,11 +1,11 @@
 import { createClient } from "next-sanity"
 import imageUrlBuilder from "@sanity/image-url"
 
-// Controleer of de environment variables bestaan en gebruik fallbacks indien nodig
+// Gebruik de environment variables
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production"
 
-// Zorg ervoor dat projectId altijd een waarde heeft
+// Controleer of de projectId bestaat
 if (!projectId) {
   throw new Error("Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID")
 }
