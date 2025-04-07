@@ -1,17 +1,27 @@
 import { createClient } from "next-sanity"
 import imageUrlBuilder from "@sanity/image-url"
 
-// Hardcoded waarden voor testen (ALLEEN VOOR ONTWIKKELING)
-// Gebruik de waarde die je in je Vercel dashboard ziet (0u29u9fd)
-const projectId = "0u29u9fd" // Vervang dit door je echte Project ID uit je Vercel dashboard
-const dataset = "production"
+// Functie om environment variables veilig te laden
+function getEnv(name: string, fallback?: string): string {
+  const value = process.env[name] || fallback
+  if (!value && fallback === undefined) {
+    console.warn(`Missing environment variable: ${name}`)
+    return "0u29u9fd" // Fallback naar je project ID als het niet gevonden wordt
+  }
+  return value || ""
+}
+
+// Laad environment variables met fallbacks
+const projectId = getEnv("NEXT_PUBLIC_SANITY_PROJECT_ID")
+const dataset = getEnv("NEXT_PUBLIC_SANITY_DATASET", "production")
+const token = getEnv("SANITY_API_READ_TOKEN", undefined)
 
 export const client = createClient({
   projectId,
   dataset,
   apiVersion: "2023-05-03",
   useCdn: process.env.NODE_ENV === "production",
-  token: process.env.SANITY_API_READ_TOKEN || undefined,
+  token: token || undefined,
 })
 
 // Helper functie voor afbeeldingen
@@ -60,5 +70,14 @@ export async function getPage(slug: string) {
   `,
     { slug },
   )
+}
+
+// Functie om alle pagina's op te halen (voor generateStaticParams)
+export async function getPages() {
+  return await client.fetch(`
+    *[_type == "pagina"] {
+      "slug": slug.current
+    }
+  `)
 }
 

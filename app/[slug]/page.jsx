@@ -1,8 +1,20 @@
-import { getPage } from "@/lib/sanity"
-import { urlFor } from "@/lib/sanity"
+import { getPage, getPages, urlFor } from "@/lib/sanity"
 import { PortableText } from "@portabletext/react"
 import { notFound } from "next/navigation"
 import Image from "next/image"
+
+// Voeg deze functie toe om alle mogelijke slugs vooraf te genereren
+export async function generateStaticParams() {
+  try {
+    const pages = await getPages()
+    return pages.map((page) => ({
+      slug: page.slug,
+    }))
+  } catch (error) {
+    console.error("Error generating static params for pages:", error)
+    return []
+  }
+}
 
 export default async function Page({ params }) {
   // Haal de pagina op uit Sanity
