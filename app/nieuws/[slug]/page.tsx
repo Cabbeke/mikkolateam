@@ -1,9 +1,18 @@
-import { getNewsItem, urlFor } from "@/lib/sanity"
+import { getNewsItem, getNewsItems, urlFor } from "@/lib/sanity"
 import { PortableText } from "@portabletext/react"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 
-export default async function NewsItemPage({ params }) {
+// Voeg deze functie toe om alle mogelijke slugs vooraf te genereren
+export async function generateStaticParams() {
+  const news = await getNewsItems()
+
+  return news.map((item: any) => ({
+    slug: item.slug.current,
+  }))
+}
+
+export default async function NewsItemPage({ params }: { params: { slug: string } }) {
   const newsItem = await getNewsItem(params.slug)
 
   if (!newsItem) {
@@ -31,7 +40,7 @@ export default async function NewsItemPage({ params }) {
           value={newsItem.body}
           components={{
             types: {
-              image: ({ value }) => (
+              image: ({ value }: any) => (
                 <div className="relative w-full h-96 my-8">
                   <Image src={urlFor(value).url() || "/placeholder.svg"} alt="" fill className="object-contain" />
                 </div>

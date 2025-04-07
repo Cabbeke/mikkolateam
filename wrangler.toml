@@ -1,5 +1,0 @@
-name = "mikkolateam"
-compatibility_date = "2025-04-05"
-main = ".vercel/output/config.json"   # Worker entry point
-type = "javascript"
-command = "next build && npx @cloudflare/next-on-pages@latest"
