@@ -6,6 +6,11 @@ const nextConfig = {
   // Specificeer de output directory als 'out'
   distDir: "out",
 
+  // Sluit API routes uit van de build
+  experimental: {
+    excludeRoutes: ["/api/:path*"],
+  },
+
   images: {
     unoptimized: true, // Nodig voor 'export' mode
     remotePatterns: [
