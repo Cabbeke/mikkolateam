@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Voor Cloudflare Pages is 'export' de juiste optie
+  output: "export",
 
-  experimental: { esmExternals: true },
+  // Specificeer de output directory als 'out'
+  distDir: "out",
 
   images: {
     unoptimized: true, // Nodig voor 'export' mode
