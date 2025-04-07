@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Voor Cloudflare Pages is 'export' vaak de beste optie
+  // Voor Cloudflare Pages zonder Functions, gebruik 'export'
   output: "export",
 
-  // Maar als je API routes of server components nodig hebt, verwijder dan de output optie
-  // en gebruik de Cloudflare Pages Functions integratie
+  // Als je Cloudflare Pages Functions wilt gebruiken, verwijder de output optie
+  // en voeg deze regel toe:
+  // experimental: { esmExternals: true },
 
   images: {
     unoptimized: true, // Nodig voor 'export' mode
