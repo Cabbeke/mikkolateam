@@ -16,6 +16,17 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
 
+  // Sluit dynamische routes uit
+  exportPathMap: async () => ({
+    "/": { page: "/" },
+    "/nieuws": { page: "/nieuws" },
+    "/kalender": { page: "/kalender" },
+    "/bestuur": { page: "/bestuur" },
+    "/piloten": { page: "/piloten" },
+    "/sponsors": { page: "/sponsors" },
+    "/beheer": { page: "/beheer" },
+  }),
+
   images: {
     unoptimized: true, // Nodig voor 'export' mode
     remotePatterns: [

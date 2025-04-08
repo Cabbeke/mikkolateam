@@ -29,7 +29,7 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/[slug]/page.jsx", "app/nieuws/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/[slug]/page.jsx", "app/nieuws/page.js", "app/beheer/page.js", "app/sponsors/page.js", "app/piloten/page.js"],
   "exclude": [
     "node_modules",
     // Voeg deze regel toe om de problematische bestanden uit te sluiten van TypeScript controle
