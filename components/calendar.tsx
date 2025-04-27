@@ -8,46 +8,6 @@ export default function CalendarSection() {
   const events = [
     {
       id: 1,
-      title: "Lommel",
-      date: "23 Maart 2025",
-      location: "Lommel, België",
-      federation: "VMCF",
-      special: "Openingsweekend",
-    },
-    {
-      id: 2,
-      title: "Retie",
-      date: "30 Maart 2025",
-      location: "Retie, België",
-      federation: "VMCF",
-      special: "Ouverture FFM",
-    },
-    {
-      id: 3,
-      title: "Plomion",
-      date: "6 April 2025",
-      location: "Plomion, Frankrijk",
-      federation: "FFM",
-      special: "",
-    },
-    {
-      id: 4,
-      title: "Appelterre",
-      date: "13 April 2025",
-      location: "Appelterre, België",
-      federation: "VMCF",
-      special: "",
-    },
-    {
-      id: 5,
-      title: "Herk De Stad",
-      date: "20 April 2025",
-      location: "Herk De Stad, België",
-      federation: "VMCF",
-      special: "",
-    },
-    {
-      id: 6,
       title: "Gierle",
       date: "27 April 2025",
       location: "Gierle, België",
@@ -55,15 +15,7 @@ export default function CalendarSection() {
       special: "",
     },
     {
-      id: 7,
-      title: "Avesnes-sur-Helpe",
-      date: "1 Mei 2025",
-      location: "Avesnes-sur-Helpe, Frankrijk",
-      federation: "FFM",
-      special: "",
-    },
-    {
-      id: 8,
+      id: 2,
       title: "Genk",
       date: "4 Mei 2025",
       location: "Genk, België",
@@ -71,17 +23,41 @@ export default function CalendarSection() {
       special: "",
     },
     {
-      id: 9,
+      id: 3,
       title: "Maricourt",
       date: "11 Mei 2025",
       location: "Maricourt, Frankrijk",
       federation: "FFM",
       special: "",
     },
+    {
+      id: 4,
+      title: "Blargies",
+      date: "18 Mei 2025",
+      location: "Blargies, Frankrijk",
+      federation: "FFM",
+      special: "",
+    },
+    {
+      id: 5,
+      title: "Lille",
+      date: "25 Mei 2025",
+      location: "Lille, België",
+      federation: "VMCF",
+      special: "",
+    },
+    {
+      id: 6,
+      title: "Axel",
+      date: "29 Mei 2025",
+      location: "Axel, Nederland",
+      federation: "VMCF",
+      special: "",
+    },
   ]
 
   // Toon alleen de eerste 6 evenementen, de rest kan op een aparte pagina
-  const displayedEvents = events.slice(0, 6)
+  const displayedEvents = events
 
   return (
     <section id="kalender" className="py-16 pt-24 -mt-16">
@@ -141,4 +117,3 @@ export default function CalendarSection() {
     </section>
   )
 }
-

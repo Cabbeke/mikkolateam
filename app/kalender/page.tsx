@@ -1,53 +1,14 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, MapPin, Award, ChevronLeft } from "lucide-react"
+import { Calendar, MapPin, Award, ChevronLeft, Info } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react"
 
 export default function KalenderPage() {
   const events = [
     {
       id: 1,
-      title: "Lommel",
-      date: "23 Maart 2025",
-      location: "Lommel, België",
-      federation: "VMCF",
-      special: "Openingsweekend",
-    },
-    {
-      id: 2,
-      title: "Retie",
-      date: "30 Maart 2025",
-      location: "Retie, België",
-      federation: "VMCF",
-      special: "Ouverture FFM",
-    },
-    {
-      id: 3,
-      title: "Plomion",
-      date: "6 April 2025",
-      location: "Plomion, Frankrijk",
-      federation: "FFM",
-      special: "",
-    },
-    {
-      id: 4,
-      title: "Appelterre",
-      date: "13 April 2025",
-      location: "Appelterre, België",
-      federation: "VMCF",
-      special: "",
-    },
-    {
-      id: 5,
-      title: "Herk De Stad",
-      date: "20 April 2025",
-      location: "Herk De Stad, België",
-      federation: "VMCF",
-      special: "",
-    },
-    {
-      id: 6,
       title: "Gierle",
       date: "27 April 2025",
       location: "Gierle, België",
@@ -55,15 +16,7 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 7,
-      title: "Avesnes-sur-Helpe",
-      date: "1 Mei 2025",
-      location: "Avesnes-sur-Helpe, Frankrijk",
-      federation: "FFM",
-      special: "",
-    },
-    {
-      id: 8,
+      id: 2,
       title: "Genk",
       date: "4 Mei 2025",
       location: "Genk, België",
@@ -71,7 +24,7 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 9,
+      id: 3,
       title: "Maricourt",
       date: "11 Mei 2025",
       location: "Maricourt, Frankrijk",
@@ -79,7 +32,7 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 10,
+      id: 4,
       title: "Blargies",
       date: "18 Mei 2025",
       location: "Blargies, Frankrijk",
@@ -87,7 +40,7 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 11,
+      id: 5,
       title: "Lille",
       date: "25 Mei 2025",
       location: "Lille, België",
@@ -95,7 +48,7 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 12,
+      id: 6,
       title: "Axel",
       date: "29 Mei 2025",
       location: "Axel, Nederland",
@@ -103,7 +56,7 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 13,
+      id: 7,
       title: "Isbergues",
       date: "1 Juni 2025",
       location: "Isbergues, Frankrijk",
@@ -111,31 +64,31 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 14,
+      id: 8,
       title: "Cassel",
       date: "9 Juni 2025",
       location: "Cassel, Frankrijk",
       federation: "FFM",
-      special: "GEEN PRESTIGE 450",
+      special: "85cc-trophee-125 cc",
     },
     {
-      id: 15,
+      id: 9,
       title: "Moresnet",
       date: "9 Juni 2025",
       location: "Moresnet, België",
       federation: "VMCF",
-      special: "450 CC",
+      special: "Prestige 250/500 cc",
     },
     {
-      id: 16,
-      title: "Avesnes sur Helpe",
-      date: "21 Juni 2025",
-      location: "Avesnes sur Helpe, Frankrijk",
-      federation: "FFM",
-      special: "SUPERCROSS",
+      id: 10,
+      title: "TBC",
+      date: "15 Juni 2025",
+      location: "Locatie nog te bepalen",
+      federation: "VMCF",
+      special: "",
     },
     {
-      id: 17,
+      id: 11,
       title: "Oirschot",
       date: "22 Juni 2025",
       location: "Oirschot, Nederland",
@@ -143,47 +96,39 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 18,
-      title: "Poederlee",
+      id: 12,
+      title: "Avesnes sur Helpes",
       date: "29 Juni 2025",
-      location: "Poederlee, België",
-      federation: "VMCF",
+      location: "Avesnes sur Helpes, Frankrijk",
+      federation: "FFM",
       special: "",
     },
     {
-      id: 19,
-      title: "Rozoy",
-      date: "6 Juli 2025",
-      location: "Rozoy, Frankrijk",
-      federation: "FFM",
-      special: "85+250+450 CC",
-    },
-    {
-      id: 20,
-      title: "Blargies",
-      date: "6 Juli 2025",
-      location: "Blargies, Frankrijk",
-      federation: "FFM",
-      special: "TROFEE",
-    },
-    {
-      id: 21,
+      id: 13,
       title: "Geetbets",
       date: "6 Juli 2025",
       location: "Geetbets, België",
       federation: "VMCF",
-      special: "",
+      special: "125 cc",
     },
     {
-      id: 22,
-      title: "Reusel",
-      date: "13 Juli 2025",
-      location: "Reusel, Nederland",
-      federation: "VMCF",
-      special: "",
+      id: 14,
+      title: "Rozoy",
+      date: "6 Juli 2025",
+      location: "Rozoy, Frankrijk",
+      federation: "FFM",
+      special: "85 cc + prestige 250/500 cc",
     },
     {
-      id: 23,
+      id: 15,
+      title: "Blargies",
+      date: "6 Juli 2025",
+      location: "Blargies, Frankrijk",
+      federation: "FFM",
+      special: "Trophee",
+    },
+    {
+      id: 16,
       title: "Le Quesnoy",
       date: "14 Juli 2025",
       location: "Le Quesnoy, Frankrijk",
@@ -191,7 +136,7 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 24,
+      id: 17,
       title: "Gouy en Artois",
       date: "20 Juli 2025",
       location: "Gouy en Artois, Frankrijk",
@@ -199,15 +144,7 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 25,
-      title: "Lierneux",
-      date: "21 Juli 2025",
-      location: "Lierneux, België",
-      federation: "VMCF",
-      special: "",
-    },
-    {
-      id: 26,
+      id: 18,
       title: "Warsage",
       date: "27 Juli 2025",
       location: "Warsage, België",
@@ -215,31 +152,31 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 27,
+      id: 19,
       title: "Werchter",
       date: "3 Augustus 2025",
       location: "Werchter, België",
       federation: "VMCF",
-      special: "",
+      special: "GP Lommel",
     },
     {
-      id: 28,
+      id: 20,
+      title: "Balen",
+      date: "9 Augustus 2025",
+      location: "Balen, België",
+      federation: "BMB",
+      special: "85 cc+65 cc",
+    },
+    {
+      id: 21,
       title: "Balen",
       date: "10 Augustus 2025",
       location: "Balen, België",
       federation: "BMB",
-      special: "65+85 CC",
-    },
-    {
-      id: 29,
-      title: "Balen",
-      date: "11 Augustus 2025",
-      location: "Balen, België",
-      federation: "BMB",
       special: "",
     },
     {
-      id: 30,
+      id: 22,
       title: "Koningshooikt",
       date: "17 Augustus 2025",
       location: "Koningshooikt, België",
@@ -247,7 +184,7 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 31,
+      id: 23,
       title: "Isbergues",
       date: "23 Augustus 2025",
       location: "Isbergues, Frankrijk",
@@ -255,39 +192,32 @@ export default function KalenderPage() {
       special: "Supercross",
     },
     {
-      id: 32,
-      title: "Hoeleden",
-      date: "24 Augustus 2025",
-      location: "Hoeleden, België",
-      federation: "VMCF",
-      special: "",
-    },
-    {
-      id: 33,
-      title: "St-Justs-en Chausse",
+      id: 24,
+      title: "St-Just-en-chaussee",
       date: "31 Augustus 2025",
-      location: "St-Justs-en Chausse, Frankrijk",
+      location: "St-Just-en-chaussee, Frankrijk",
       federation: "FFM",
       special: "",
     },
     {
-      id: 34,
-      title: "Conde sur l'Escaut",
+      id: 25,
+      title: "Condé sur l'escaut",
       date: "7 September 2025",
-      location: "Conde sur l'Escaut, Frankrijk",
+      location: "Condé sur l'escaut, Frankrijk",
       federation: "FFM",
-      special: "ORG mcc Condé",
+      special: "Finale kampioenschap",
+      organizer: "Org Mikkola",
     },
     {
-      id: 35,
-      title: "Wachtebeke",
+      id: 26,
+      title: "TBC",
       date: "14 September 2025",
-      location: "Wachtebeke, België",
-      federation: "VMCF",
-      special: "Clasters 85 cc",
+      location: "Locatie nog te bepalen",
+      federation: "",
+      special: "",
     },
     {
-      id: 36,
+      id: 27,
       title: "Halen",
       date: "21 September 2025",
       location: "Halen, België",
@@ -295,7 +225,7 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 37,
+      id: 28,
       title: "Wambeek",
       date: "28 September 2025",
       location: "Wambeek, België",
@@ -303,15 +233,16 @@ export default function KalenderPage() {
       special: "",
     },
     {
-      id: 38,
+      id: 29,
       title: "Baissieux",
       date: "5 Oktober 2025",
       location: "Baissieux, België",
       federation: "VMCF",
-      special: "",
+      special: "Coupe d'avenir",
+      organizer: "Org Rougraff",
     },
     {
-      id: 39,
+      id: 30,
       title: "Lommel",
       date: "12 Oktober 2025",
       location: "Lommel, België",
@@ -320,18 +251,22 @@ export default function KalenderPage() {
     },
   ]
 
-  // Groepeer evenementen per maand
-  const eventsByMonth = events.reduce((acc: { [key: string]: typeof events }, event) => {
+  // Maanden definiëren voor groepering
+
+  // Maak een object om evenementen per maand op te slaan
+  const eventsByMonth: { [key: string]: typeof events[0][] } = {}
+
+  // Voeg evenementen toe aan de juiste maand
+  events.forEach((event) => {
     const dateParts = event.date.split(" ")
     const month = dateParts[1]
 
-    if (!acc[month]) {
-      acc[month] = []
+    if (!eventsByMonth[month]) {
+      eventsByMonth[month] = []
     }
 
-    acc[month].push(event)
-    return acc
-  }, {})
+    eventsByMonth[month].push(event)
+  })
 
   // Sorteer de maanden in chronologische volgorde
   const monthOrder = [
@@ -350,6 +285,8 @@ export default function KalenderPage() {
   ]
 
   const sortedMonths = Object.keys(eventsByMonth).sort((a, b) => monthOrder.indexOf(a) - monthOrder.indexOf(b))
+
+  // Filter maanden zonder evenementen
 
   return (
     <main className="py-16 bg-black">
@@ -378,14 +315,16 @@ export default function KalenderPage() {
               {month} 2025
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {eventsByMonth[month].map((event) => (
+              {eventsByMonth[month].map((event: { id: number; title: string; date: string; location: string; federation: string; special: string; organizer?: string }) => (
                 <Card key={event.id} className="bg-black/80 border-mcpink-700 glow-card shadow-xl">
                   <CardHeader className="pb-2 bg-mcpink-900/30 rounded-t-lg">
                     <div className="flex justify-between items-start">
                       <h3 className="text-xl font-bold text-white">Motorcross {event.title}</h3>
-                      <Badge variant="outline" className="bg-mcpink-700 text-white border-mcpink-500 shadow-sm">
-                        {event.federation}
-                      </Badge>
+                      {event.federation && (
+                        <Badge variant="outline" className="bg-mcpink-700 text-white border-mcpink-500 shadow-sm">
+                          {event.federation}
+                        </Badge>
+                      )}
                     </div>
                   </CardHeader>
                   <CardContent className="p-5">
@@ -404,6 +343,12 @@ export default function KalenderPage() {
                           <span className="text-white font-medium">{event.special}</span>
                         </div>
                       )}
+                      {event.organizer && (
+                        <div className="flex items-center gap-3 bg-mcpink-900/20 p-2 rounded-md">
+                          <Info className="h-5 w-5 text-mcpink-400" />
+                          <span className="text-white font-medium">{event.organizer}</span>
+                        </div>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -415,4 +360,3 @@ export default function KalenderPage() {
     </main>
   )
 }
-

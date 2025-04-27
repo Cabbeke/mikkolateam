@@ -9,7 +9,16 @@ import { Calendar, Share2, ChevronDown, ChevronUp, Facebook, Link2 } from "lucid
 export default function Articles() {
   const articles = [
     {
-      id: 1,
+      id: 3,
+      title: "Come-back Steve Seronval",
+      excerpt: "Rekard-kampioen Steve Seronval was met het team verbonden als trainer voor de Franstalige rijders.",
+      fullText:
+        "Rekard-kampioen Steve Seronval was met het team verbonden als trainer voor de Franstalige rijders maar onze Honda-rijder besloot dat het te vroeg was voor een voltijds race-pensioen en zette de helm terug op. Steve won intussen de eerste BK-proef in Retie op 42 jarige leeftijd. Mooie come-back champ.",
+      date: "27 april 2025",
+      image: "/steveseronval1.jpg",
+    },
+    {
+      id: 2,
       title: "Nieuwe website MC MIKKOLA gelanceerd",
       excerpt:
         "We zijn verheugd om onze nieuwe website te lanceren, ontworpen om u beter te informeren over ons team, onze rijders en komende evenementen.",
@@ -19,7 +28,7 @@ export default function Articles() {
       image: "/rijdersvoorstelling groep.jpg",
     },
     {
-      id: 2,
+      id: 1,
       title: "Nieuw seizoen gestart op 23 maart",
       excerpt: "Het nieuwe seizoen van MC MIKKOLA is officieel van start gegaan op 23 maart 2025.",
       fullText:
@@ -95,15 +104,33 @@ export default function Articles() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {articles.map((article) => (
             <Card key={article.id} className="bg-black/40 border-mcpink-700 overflow-hidden glow-card">
-              <div className="relative h-48">
-                <Image
-                  src={article.image || "/placeholder.svg"}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
+              {article.id === 3 ? (
+                // Aangepaste weergave voor artikel met ID 3 - perfect passend in het kader
+                <div className="relative h-48 bg-black/50">
+                  <div className="absolute inset-0 flex items-center justify-center p-2">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <Image
+                        src={article.image || "/placeholder.svg"}
+                        alt={article.title}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                // Standaard weergave voor alle andere artikelen
+                <div className="relative h-48">
+                  <Image
+                    src={article.image || "/placeholder.svg"}
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+              )}
               <CardContent className="p-4">
                 <div className="flex items-center gap-2 text-sm text-gray-medium mb-2">
                   <Calendar className="h-4 w-4 text-mcpink-500" />
@@ -182,4 +209,3 @@ export default function Articles() {
     </section>
   )
 }
-
